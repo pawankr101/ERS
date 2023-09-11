@@ -1,6 +1,7 @@
 import { InputStyled, NameDivStyled, RegistrationFormDivStyled } from "./StyledRegistrationForm";
 
-function RegistrationForm() {
+function RegistrationForm({formMode}) {
+  console.log(formMode);
   return (
     <RegistrationFormDivStyled>
       <NameDivStyled>
