@@ -1,15 +1,54 @@
-import { useState } from 'react';
-import { InputStyled, NameDivStyled, RegistrationFormDivStyled } from "./StyledRegistrationForm";
+import { StyledFlexDiv, StyledFormLabel, StyledInputBox, StyledRegistrationFormDiv, StyledTextArea, StyledTextInput } from "./StyledRegistrationForm";
 
-function RegistrationForm() {
-  let [] = useState("");
+const FormTextInputBox = ({label, placeholder }) => {
   return (
-    <RegistrationFormDivStyled>
-      <NameDivStyled>
-        <InputStyled type="text" placeholder={"First Name"}/>
-        <InputStyled type="text" placeholder={"Last Name"}/>
-      </NameDivStyled>
-    </RegistrationFormDivStyled>
+    <StyledInputBox>
+      <StyledFormLabel>{label}</StyledFormLabel>
+      <StyledTextInput
+        type="text"
+        placeholder={placeholder}
+      ></StyledTextInput>
+    </StyledInputBox>
+  );
+};
+const FormDateInputBox = ({label, placeholder }) => {
+  return (
+    <StyledInputBox>
+      <StyledFormLabel>{label}</StyledFormLabel>
+      <StyledTextInput
+        type="date"
+        placeholder={placeholder}
+      ></StyledTextInput>
+    </StyledInputBox>
+  );
+};
+const FormTextAreaBox = ({label, placeholder }) => {
+  return (
+    <StyledInputBox>
+      <StyledFormLabel>{label}</StyledFormLabel>
+      <StyledTextArea
+        placeholder={placeholder}
+      ></StyledTextArea>
+    </StyledInputBox>
+  );
+};
+
+
+const RegistrationForm = ({mode}) => {
+console.log(mode)
+  return (
+    <StyledRegistrationFormDiv>
+      <StyledFlexDiv column>
+        <FormTextInputBox label="First Name" placeholder={"First Name"}/>
+        <FormTextInputBox label="Last Name" placeholder={"Last Name"}/>
+      </StyledFlexDiv>
+      <StyledFlexDiv>
+        <FormDateInputBox label="DOB" placeholder={"DOB"}/>
+      </StyledFlexDiv>
+      <StyledFlexDiv>
+        <StyledTextArea label="Study" placeholder={"Study"}/>
+      </StyledFlexDiv>
+    </StyledRegistrationFormDiv>
   );
 }
 export default RegistrationForm;
