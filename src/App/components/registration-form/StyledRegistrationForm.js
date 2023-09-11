@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
-export const RegistrationFormDivStyled = styled.div`
+export const StyledRegistrationFormDiv = styled.div`
   
 `;
 
-export const NameDivStyled = styled.div`
-    display: flex;
-`;
-
-export const InputStyled = styled.input`
+export const StyledTextInput = styled()`
 
 `;

@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { InputStyled, NameDivStyled, RegistrationFormDivStyled } from "./StyledRegistrationForm";
 
 function RegistrationForm() {
-  let [] = useState("");
   return (
     <RegistrationFormDivStyled>
       <NameDivStyled>
